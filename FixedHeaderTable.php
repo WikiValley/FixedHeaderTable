@@ -99,7 +99,7 @@ function renderFixedHeaderTable($input, $args = array(), $parser, $frame ){
 	
 	# Set up class that will define how the widget treats the table
 	$divStyle = isset($args['style']) ? "overflow: auto; " . $args['style'] : 'overflow: auto; height: 450px; width: 100%';
-	$fixedColumnCount = is_numeric(isset($args['fixedcolumns']) ? $args['fixedcolumns'] : 0) ? floor($args['fixedcolumns']) : 0;
+	$fixedColumnCount = isset($args['fixedcolumns']) && is_numeric($args['fixedcolumns']) ? floor($args['fixedcolumns']) : 0;
 	
 	# Split table markup by line
 	$tableText = explode( "\n", $input );
